@@ -70,7 +70,10 @@ class GreetingPlugin : Plugin<Project> {
 
 open class GreetingPluginExtension(project: Project) {
 
-    val message = "hiya"
+    //val message = "hiya"
+    //Changed above line as seen in:
+    // https://github.com/cbeust/kotlin-dsl/blob/master/samples/provider-properties/build.gradle.kts
+    val message = project.objects.property<String>()
     val outputFiles: ConfigurableFileCollection = project.files()
 }
 
